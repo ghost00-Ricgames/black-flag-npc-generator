@@ -1,0 +1,88 @@
+.black-flag-npc-generator .window-content{padding:0;overflow:auto}
+.black-flag-npc-generator .bfng-root{--bfng-border:var(--color-border-light-primary, #999);color:var(--color-text-primary,inherit);font-size:13px;line-height:1.4}
+.black-flag-npc-generator .bfng-root *{box-sizing:border-box}
+.black-flag-npc-generator .bfng-intro,.black-flag-npc-generator .bfng-output-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.black-flag-npc-generator .bfng-intro{padding:14px 17px;border-bottom:1px solid var(--bfng-border)}
+.black-flag-npc-generator .bfng-intro strong{font-size:20px;display:block}
+.black-flag-npc-generator .bfng-intro small,.black-flag-npc-generator .bfng-output-head small{display:block;opacity:.7;font-size:11px}
+.black-flag-npc-generator .bfng-layout{display:grid;grid-template-columns:minmax(205px,33%) minmax(0,1fr);min-height:480px}
+.black-flag-npc-generator .bfng-controls{padding:12px;border-right:1px solid var(--bfng-border);background:var(--color-cool-5-10,rgba(0,0,0,.03))}
+.black-flag-npc-generator fieldset{border:1px solid var(--bfng-border);border-radius:6px;padding:9px 10px;margin:0 0 12px;min-width:0}
+.black-flag-npc-generator legend{font-weight:700;padding:0 6px}
+.black-flag-npc-generator .bfng-mode{display:flex;flex-wrap:wrap;gap:5px}
+.black-flag-npc-generator .bfng-mode label{flex:1;white-space:nowrap;text-align:center;cursor:pointer}
+.black-flag-npc-generator .bfng-mode input{position:absolute;opacity:0;width:1px;height:1px}
+.black-flag-npc-generator .bfng-mode span{display:block;border:1px solid var(--bfng-border);border-radius:5px;padding:5px 6px}
+.black-flag-npc-generator .bfng-mode input:checked + span{background:var(--color-warm-2-20,rgba(173,116,44,.20));outline:2px solid var(--color-warm-2,#986b2e)}
+.black-flag-npc-generator .bfng-mode input:focus-visible + span{outline:2px solid currentColor}
+.black-flag-npc-generator .bfng-check{display:flex;gap:7px;align-items:flex-start;margin:7px 0;cursor:pointer}
+.black-flag-npc-generator .bfng-check input{flex:0 0 auto;margin:2px 0 0}
+.black-flag-npc-generator .bfng-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.black-flag-npc-generator .bfng-input-label{display:block;margin:7px 0;font-weight:600}
+.black-flag-npc-generator .bfng-input-label select,.black-flag-npc-generator .bfng-input-label input{width:100%;display:block;margin-top:4px;height:32px;font-weight:400}
+.black-flag-npc-generator .bfng-hint{opacity:.75;font-size:11px;line-height:1.45;margin:5px 0 8px}
+.black-flag-npc-generator button{cursor:pointer;min-height:30px;padding:5px 9px;line-height:1.25}
+.black-flag-npc-generator button:disabled{opacity:.4;cursor:not-allowed}
+.black-flag-npc-generator .bfng-primary{background:var(--color-warm-2-20,rgba(173,116,44,.18));font-weight:700;border:1px solid var(--color-warm-2,#986b2e)}
+.black-flag-npc-generator .bfng-small-actions{display:flex;flex-wrap:wrap;gap:4px}
+.black-flag-npc-generator .bfng-small-actions button{font-size:11px;flex:1}
+.black-flag-npc-generator .bfng-output{padding:14px;overflow:hidden}
+.black-flag-npc-generator .bfng-output-head{padding:0 0 12px}
+.black-flag-npc-generator .bfng-output-head strong{font-size:17px}
+.black-flag-npc-generator .bfng-output-head>span{font-size:11px;opacity:.65;white-space:nowrap}
+.black-flag-npc-generator .bfng-result{border-top:1px solid var(--bfng-border);padding:10px 0 11px}
+.black-flag-npc-generator .bfng-result-label{display:flex;gap:8px;align-items:center;justify-content:space-between;font-weight:700;margin-bottom:4px}
+.black-flag-npc-generator .bfng-result-label span{font-size:11px;font-weight:400;opacity:.65}
+.black-flag-npc-generator textarea{resize:vertical;min-height:54px;width:100%;line-height:1.45;padding:7px;font-family:inherit;font-size:12px}
+.black-flag-npc-generator .bfng-result-controls{display:flex;justify-content:flex-end;gap:6px;margin-top:5px}
+.black-flag-npc-generator .bfng-result-controls button{font-size:11px;min-height:25px}
+.black-flag-npc-generator .bfng-export{margin-top:16px}
+.black-flag-npc-generator .bfng-export-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.black-flag-npc-generator .bfng-export-buttons button{flex:1}
+.black-flag-npc-generator .bfng-footer{font-size:11px;padding:10px 15px;opacity:.6;border-top:1px solid var(--bfng-border)}
+button.bfng-launch{margin:5px 0;min-height:27px}
+@media(max-width:650px){.black-flag-npc-generator .bfng-layout{grid-template-columns:1fr}.black-flag-npc-generator .bfng-controls{border-right:0;border-bottom:1px solid var(--bfng-border)}.black-flag-npc-generator .bfng-intro{flex-wrap:wrap}}
+
+.black-flag-npc-generator .bfng-ai{border-color:var(--color-warm-2,#986b2e)}
+.black-flag-npc-generator .bfng-ai-notice{margin-bottom:12px;line-height:1.5}
+.black-flag-npc-generator .bfng-ai-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.black-flag-npc-generator .bfng-ai-controls select{width:100%;display:block;margin-top:4px;min-height:32px}
+.black-flag-npc-generator .bfng-ai-warning{font-size:12px;padding:8px 10px;border:1px solid var(--color-warm-2,#986b2e);border-radius:5px}
+.black-flag-npc-generator .bfng-api-controls{padding:9px 0;margin:8px 0;border-block:1px solid var(--bfng-border)}
+.black-flag-npc-generator .bfng-api-controls button{width:100%}
+.black-flag-npc-generator .bfng-input-label textarea{display:block;margin-top:5px;width:100%;font-weight:400}
+@media(max-width:650px){.black-flag-npc-generator .bfng-ai-controls{grid-template-columns:1fr}}
+
+.black-flag-npc-generator .bfng-ai-prompt{margin:10px 0 12px}
+.black-flag-npc-generator .bfng-ai-prompt summary{cursor:pointer;font-size:12px}
+.black-flag-npc-generator .bfng-ai-prompt textarea{margin-top:7px;min-height:140px;white-space:pre-wrap}
+
+/* 0.2.2 compact-workshop refinement: controls share the field header instead of a second row. */
+.black-flag-npc-generator .bfng-result{padding:6px 0 7px}
+.black-flag-npc-generator .bfng-result-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:3px}
+.black-flag-npc-generator .bfng-result-label{justify-content:flex-start;flex-wrap:wrap;gap:4px 8px;margin:0;min-width:0}
+.black-flag-npc-generator .bfng-result-controls{margin:0;flex-shrink:0;gap:4px}
+.black-flag-npc-generator .bfng-result-controls button{min-height:26px;padding:3px 6px}
+.black-flag-npc-generator .bfng-result textarea{min-height:43px;height:43px;max-height:180px;padding:5px 7px}
+.black-flag-npc-generator .bfng-output-head{padding-bottom:7px}
+/* Uncommon features remain available without occupying the default viewport. */
+.black-flag-npc-generator .bfng-panel{border:1px solid var(--bfng-border);border-radius:6px;margin:0 0 12px;min-width:0}
+.black-flag-npc-generator .bfng-panel>summary{font-weight:700;cursor:pointer;padding:10px 11px;list-style:revert;outline-offset:2px}
+.black-flag-npc-generator .bfng-panel[open]>summary{border-bottom:1px solid var(--bfng-border)}
+.black-flag-npc-generator .bfng-panel-content{padding:8px 10px 10px}
+.black-flag-npc-generator .bfng-panel-content>.bfng-hint:first-child{margin-top:0}
+@media(max-width:730px){
+ .black-flag-npc-generator .bfng-layout{grid-template-columns:1fr}
+ .black-flag-npc-generator .bfng-controls{border-right:0;border-bottom:1px solid var(--bfng-border)}
+ .black-flag-npc-generator .bfng-result-head{flex-wrap:wrap}
+ .black-flag-npc-generator .bfng-result-controls{margin-left:auto}
+}
+
+/* Respond to module-window size as well as screen size (Foundry windows are resizable). */
+.black-flag-npc-generator .bfng-root{container-type:inline-size}
+@container (max-width:730px){
+ .bfng-layout{grid-template-columns:1fr}
+ .bfng-controls{border-right:0;border-bottom:1px solid var(--bfng-border)}
+ .bfng-result-head{flex-wrap:wrap}
+ .bfng-result-controls{margin-left:auto}
+}
