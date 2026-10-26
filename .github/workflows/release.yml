@@ -1,0 +1,48 @@
+name: Package Foundry module
+
+on:
+  push:
+    branches: ['main']
+    paths: ['module.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate and run tests
+        run: npm run check && npm test
+      - name: Derive release tag from manifest
+        shell: bash
+        run: |
+          VERSION=$(node --input-type=module -e "import fs from 'node:fs'; console.log(JSON.parse(fs.readFileSync('module.json')).version)")
+          test -n "$VERSION" || { echo "Missing module version"; exit 1; }
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "TAG=v$VERSION" >> "$GITHUB_ENV"
+      - name: Package installable ZIP
+        shell: bash
+        run: |
+          mkdir -p release/black-flag-npc-generator
+          cp module.json LICENSE README.md CHANGELOG.md AI-SETUP.md release/black-flag-npc-generator/
+          cp -r scripts styles release/black-flag-npc-generator/
+          cd release
+          zip -rq black-flag-npc-generator.zip black-flag-npc-generator
+          cp black-flag-npc-generator/module.json ./module.json
+      - name: Publish GitHub pre-release for v0.x
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          target_commitish: ${{ github.sha }}
+          prerelease: ${{ startsWith(env.TAG, 'v0.') }}
+          files: |
+            release/module.json
+            release/black-flag-npc-generator.zip
+          generate_release_notes: true
+          body_path: BETA-RELEASE.md
