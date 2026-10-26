@@ -1,0 +1,39 @@
+{
+  "id": "black-flag-npc-generator",
+  "title": "Black Flag NPC Generator",
+  "description": "GM-only NPC generator for Black Flag with rerolls, Journals, Actor Biographies, and optional ChatGPT prompt-based backgrounds.",
+  "version": "0.2.2",
+  "authors": [
+    {
+      "name": "ghost00-Ricgames",
+      "url": "https://github.com/ghost00-Ricgames/black-flag-npc-generator"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "black-flag",
+        "type": "system",
+        "compatibility": {
+          "minimum": "3.0.075"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/generator.css"
+  ],
+  "url": "https://github.com/ghost00-Ricgames/black-flag-npc-generator",
+  "manifest": "https://raw.githubusercontent.com/ghost00-Ricgames/black-flag-npc-generator/main/module.json",
+  "download": "https://github.com/ghost00-Ricgames/black-flag-npc-generator/releases/download/v0.2.2/black-flag-npc-generator.zip",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "bugs": "https://github.com/ghost00-Ricgames/black-flag-npc-generator/issues"
+}
